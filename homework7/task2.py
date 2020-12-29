@@ -11,15 +11,17 @@
 # Проверить на практике полученные на этом уроке знания:
 # реализовать абстрактные классы для основных классов проекта,
 # проверить на практике работу декоратора @property.
+from abc import ABC, abstractmethod
 
 
-class Clothes:
+class Clothes(ABC):
 
     def __init__(self, title):
         self.title = title
 
+    @abstractmethod
     def calc_amount_fabric(self):
-        raise NotImplementedError
+        pass
 
 
 class Coat(Clothes):
